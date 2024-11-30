@@ -1,4 +1,4 @@
-# блокировки потоков
+## блокировки потоков
 import random
 import time
 import threading
