@@ -15,12 +15,11 @@ class Bank:
     def deposit(self):
         for i in range(100): # Будет совершать 100 транзакций пополнения средств.
             addition = random.randint(50, 500) # пополнение - случайное целое число от 50 до 500.
+            self.balance += addition  # пополнили баланс
    # если баланс больше или равен 500 и замок lock заблокирован - lock.locked(),
             if self.balance >= 500 and self.lock.locked():
                 # то разблокировать его методом release.
                 self.lock.release()
-            self.balance += addition  # пополнили баланс
-
     # После увеличения баланса должна выводится строка
             # "Пополнение: <случайное число>. Баланс: <текущий баланс>".
             print(f'Пополнение: {addition}. Баланс: {self.balance}')
